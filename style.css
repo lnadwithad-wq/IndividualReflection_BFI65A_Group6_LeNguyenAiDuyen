@@ -1019,11 +1019,22 @@ body, html {
 }
 
 /* =====================================================================
-   4. RESPONSIVE DESIGN (SMALL LAPTOPS, TABLETS & MOBILE PHONES)
+   4. MASTER RESPONSIVE DESIGN (LAPTOPS, TABLETS & MOBILE PHONES)
    ===================================================================== */
 
-/* --- A. SMALL LAPTOPS & LANDSCAPE TABLETS (Max Width: 1100px) --- */
+/* --- A. SMALLER LAPTOPS & LANDSCAPE TABLETS (Max Width: 1100px) --- */
 @media (max-width: 1100px) {
+  /* Scale Intro Box & Cat */
+  .intro-stage {
+    width: min(760px, 88vw);
+  }
+
+  .intro-chat-box {
+    height: 380px;
+    padding: 75px 90px;
+  }
+
+  /* Scale the 5 Wall Paintings & Plaques */
   .item-1,
   .item-2,
   .item-3,
@@ -1040,158 +1051,200 @@ body, html {
   .label-text {
     font-size: clamp(0.92rem, 1.3vw, 1.1rem);
   }
+
+  /* Scale the Painting Wall Cat & Quote Bubble */
+  .wall-cat-img {
+    width: 105px;
+  }
+
+  .wall-cat-quote {
+    width: 185px;
+    min-height: 66px;
+    padding: 12px 18px;
+  }
 }
 
-/* --- B. MOBILE PHONES & PORTRAIT TABLETS (Max Width: 768px) --- */
+/* --- B. SHORTER LAPTOP SCREENS (Max Height: 740px) --- */
+@media (max-height: 740px) and (min-width: 769px) {
+  /* Prevent the Intro Box and Continue Box from overlapping vertically */
+  .intro-stage {
+    top: 3%;
+  }
+
+  .intro-chat-box {
+    height: 340px;
+    padding: 64px 95px;
+  }
+
+  .typewriter-text {
+    font-size: 0.82rem;
+    line-height: 1.48;
+  }
+
+  .intro-continue-box {
+    bottom: 3%;
+    min-height: 98px;
+    width: 380px;
+  }
+
+  /* Lift the bottom row of paintings slightly so they clear the cat & menu */
+  .item-2,
+  .item-4 {
+    top: 33%;
+  }
+}
+
+/* --- C. MOBILE PHONES & PORTRAIT TABLETS (Max Width: 768px) --- */
 @media (max-width: 768px) {
-  /* 1. Center the sleek icon menu at the top of the phone screen */
+  /* 1. Bottom-Right Menu Bar (Compact & tooltips pop UPWARD cleanly) */
   .sleek-menu {
-    top: 14px;
-    right: auto;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 6px 12px;
+    top: auto;
+    bottom: 12px;
+    right: 12px;
+    left: auto;
+    transform: none;
+    padding: 6px 11px;
     gap: 6px;
   }
 
   .menu-icon-btn {
-    width: 32px;
-    height: 32px;
+    width: 30px;
+    height: 30px;
   }
 
   .menu-icon-btn svg {
-    width: 18px;
-    height: 18px;
+    width: 17px;
+    height: 17px;
   }
 
-  /* 2. Welcome Screen: Adjust door click zone & welcome box for portrait */
+  .menu-tooltip {
+    top: auto;
+    bottom: 40px;
+    font-size: 0.85rem;
+    padding: 3px 10px;
+  }
+
+  /* 2. Welcome Door Screen */
   .door-hotspot {
     left: 18%;
     top: 8%;
     width: 64%;
-    height: 78%;
+    height: 76%;
   }
 
   .welcome-box {
-    width: 92vw;
-    min-height: 145px;
-    padding: 20px 28px;
-    bottom: 5%;
+    width: 90vw;
+    min-height: 135px;
+    padding: 18px 26px;
+    bottom: 9%;
   }
 
   .welcome-line-1 {
-    font-size: clamp(1.75rem, 6vw, 2.2rem);
+    font-size: clamp(1.7rem, 5.8vw, 2.1rem);
   }
 
   .welcome-line-2 {
-    font-size: clamp(1.1rem, 3.8vw, 1.4rem);
+    font-size: clamp(1.05rem, 3.8vw, 1.35rem);
   }
 
-  /* 3. Room Gallery: Rearrange 5 frames into a 2-2-1 layout for vertical screens */
+  /* 3. Intro / Home Screen (Centered Box, Corner Cat & Continue Button) */
+  .intro-stage {
+    top: 5%;
+    width: 94vw;
+  }
+
+  .intro-chat-box {
+    height: 330px;
+    padding: 52px 36px 54px 40px;
+  }
+
+  .typewriter-text {
+    max-width: 100%;
+    max-height: 100%;
+    overflow-y: auto;
+    font-size: 0.76rem;
+    line-height: 1.45;
+  }
+
+  .cat-wrapper {
+    bottom: -18px;
+    left: -6px;
+  }
+
+  .floating-cat {
+    width: 92px;
+  }
+
+  .intro-continue-box {
+    bottom: 64px; /* Sits cleanly above the bottom-right menu bar */
+    min-height: 92px;
+    width: 82vw;
+    padding: 14px 22px;
+  }
+
+  /* 4. Room Gallery Screen (2-2-1 Grid + Bottom-Left Cat & Quote) */
   .gallery-item {
-    width: 38vw !important;
-    max-width: 155px;
+    width: 36vw !important;
+    max-width: 140px;
   }
 
   .painting-img {
-    max-height: 18vh;
+    max-height: 15vh;
   }
 
   .label-plaque {
-    width: 42vw;
-    max-width: 170px;
-    height: 40px;
+    width: 40vw;
+    max-width: 155px;
+    height: 36px;
     margin-top: 4px;
   }
 
   .label-text {
-    font-size: 0.95rem;
+    font-size: 0.88rem;
   }
 
   /* Row 1: Frame 1 & Frame 2 */
   .item-1 {
-    top: 10%;
-    left: 8%;
+    top: 4%;
+    left: 9%;
   }
   .item-2 {
-    top: 10%;
-    left: 54%;
+    top: 4%;
+    left: 55%;
   }
 
   /* Row 2: Frame 3 & Frame 4 */
   .item-3 {
-    top: 40%;
-    left: 8%;
+    top: 30%;
+    left: 9%;
   }
   .item-4 {
-    top: 40%;
-    left: 54%;
+    top: 30%;
+    left: 55%;
   }
 
-  /* Row 3: Frame 5 Centered at Bottom */
+  /* Row 3: Frame 5 Centered (Leaves bottom corners free for Cat & Menu) */
   .item-5 {
-    top: 69%;
-    left: 31%;
+    top: 56%;
+    left: 32%;
   }
 
-  /* 4. Mailbox & Slide Deck: Fit phone screen & keep arrows inside viewport */
-  .mail-notification {
-    top: 12%;
-    font-size: 1.75rem;
+  /* Bottom-Left Cat & Quote Bubble on Mobile */
+  .wall-cat-guide {
+    bottom: 10px;
+    left: 10px;
   }
 
-  .mailbox-img {
-    width: 78vw;
+  .wall-cat-img {
+    width: 66px;
   }
 
-  .deck-stage {
-    width: 88vw;
-    height: min(540px, 76vh);
+  .wall-cat-quote {
+    bottom: 68%;
+    left: 52%;
+    width: 140px;
+    min-height: 50px;
+    padding: 8px 12px;
   }
 
-  .slide-card {
-    padding: 18% 13% 15% 13%;
-  }
-
-  .slide-section-tag {
-    font-size: 1.05rem;
-  }
-
-  .slide-title {
-    font-size: 1.55rem;
-    margin-bottom: 10px;
-  }
-
-  .slide-divider {
-    width: 65px;
-    margin-bottom: 12px;
-  }
-
-  .slide-body {
-    font-size: 0.92rem;
-    line-height: 1.6;
-  }
-
-  /* Pull Previous/Next arrows inside the screen edge so they aren't cut off */
-  .icon-action-btn {
-    width: 36px;
-    height: 36px;
-  }
-
-  .close-btn {
-    top: -10px;
-    right: -6px;
-  }
-
-  .prev-arrow {
-    left: -12px;
-  }
-
-  .next-arrow {
-    right: -12px;
-  }
-
-  .slide-dots {
-    bottom: -26px;
-  }
-}
+  .wall-cat-text {
