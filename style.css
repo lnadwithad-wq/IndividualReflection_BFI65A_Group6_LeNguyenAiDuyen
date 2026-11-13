@@ -134,7 +134,7 @@ body, html {
   position: absolute;
   inset: 0;
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.9s ease, transform 1.1s cubic-bezier(0.22, 1, 0.36, 1);
@@ -1096,10 +1096,10 @@ body, html {
 
 /* --- C. MOBILE PHONES & PORTRAIT TABLETS (Max Width: 768px) --- */
 @media (max-width: 768px) {
-  /* 1. Bottom-Right Menu Bar (Compact & tooltips pop UPWARD cleanly) */
+/* 1. Bottom-Right Menu Bar (Lifted above phone gesture bar) */
   .sleek-menu {
     top: auto;
-    bottom: 12px;
+    bottom: 22px;
     right: 12px;
     left: auto;
     transform: none;
@@ -1147,104 +1147,4 @@ body, html {
     font-size: clamp(1.05rem, 3.8vw, 1.35rem);
   }
 
-  /* 3. Intro / Home Screen (Centered Box, Corner Cat & Continue Button) */
-  .intro-stage {
-    top: 5%;
-    width: 94vw;
-  }
-
-  .intro-chat-box {
-    height: 330px;
-    padding: 52px 36px 54px 40px;
-  }
-
-  .typewriter-text {
-    max-width: 100%;
-    max-height: 100%;
-    overflow-y: auto;
-    font-size: 0.76rem;
-    line-height: 1.45;
-  }
-
-  .cat-wrapper {
-    bottom: -18px;
-    left: -6px;
-  }
-
-  .floating-cat {
-    width: 92px;
-  }
-
-  .intro-continue-box {
-    bottom: 64px; /* Sits cleanly above the bottom-right menu bar */
-    min-height: 92px;
-    width: 82vw;
-    padding: 14px 22px;
-  }
-
-  /* 4. Room Gallery Screen (2-2-1 Grid + Bottom-Left Cat & Quote) */
-  .gallery-item {
-    width: 36vw !important;
-    max-width: 140px;
-  }
-
-  .painting-img {
-    max-height: 15vh;
-  }
-
-  .label-plaque {
-    width: 40vw;
-    max-width: 155px;
-    height: 36px;
-    margin-top: 4px;
-  }
-
-  .label-text {
-    font-size: 0.88rem;
-  }
-
-  /* Row 1: Frame 1 & Frame 2 */
-  .item-1 {
-    top: 4%;
-    left: 9%;
-  }
-  .item-2 {
-    top: 4%;
-    left: 55%;
-  }
-
-  /* Row 2: Frame 3 & Frame 4 */
-  .item-3 {
-    top: 30%;
-    left: 9%;
-  }
-  .item-4 {
-    top: 30%;
-    left: 55%;
-  }
-
-  /* Row 3: Frame 5 Centered (Leaves bottom corners free for Cat & Menu) */
-  .item-5 {
-    top: 56%;
-    left: 32%;
-  }
-
-  /* Bottom-Left Cat & Quote Bubble on Mobile */
-  .wall-cat-guide {
-    bottom: 10px;
-    left: 10px;
-  }
-
-  .wall-cat-img {
-    width: 66px;
-  }
-
-  .wall-cat-quote {
-    bottom: 68%;
-    left: 52%;
-    width: 140px;
-    min-height: 50px;
-    padding: 8px 12px;
-  }
-
-  .wall-cat-text {
+      width: 94vw;
