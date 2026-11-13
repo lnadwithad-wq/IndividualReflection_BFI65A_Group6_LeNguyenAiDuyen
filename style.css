@@ -1236,3 +1236,15 @@ body, html {
 
   .item-5 { top: 49% !important; left: 32% !important; }
 }
+/* Center the Big Intro Text Box in the Wallpaper Area on All Laptops & Desktops */
+@media (min-width: 769px) {
+  .intro-stage {
+    top: 38% !important; /* 38% is the exact vertical middle of the floral wallpaper */
+    transform: translateY(-50%) !important;
+  }
+}
+  /* Show the upper archway of the door on the Welcome Screen */
+#welcome-screen {
+  /* First value = horizontal (center), Second value = vertical (0% to 20%) */
+  background-position: center 10% !important;
+}
